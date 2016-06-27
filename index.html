@@ -1,1 +1,85 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>HELLO WORLD</title>
+	<style type="text/css"> 
+	html,body{
+		height: 100%;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	body{
+		display: box; 
+		display: -webkit-box; 
+		display: -moz-box;   
+		-webkit-box-pack:center; 
+		-moz-box-pack:center; 
+		-webkit-box-align:center; 
+		-moz-box-align:center;  
+	}
+ 
+	div:before, div:after {
+	    content: 'Hello World';
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    right: 0;
+	}
+	div:after {
+    	color: rgba(40,80,120,.1);
+    	text-shadow: 1px -1px 1px rgba(40,80,120,.8),-1px 1px 1px rgba(255,255,255,.8);
+	}
+	div:before {
+	    color: rgb(40,80,120);
+	    text-shadow: 0 0 1px currentColor,-1px -1px 1px #003,0 -1px 1px #003,1px -1px 1px #003,1px 0 1px #003,1px 1px 1px #003,0 1px 1px #003,-1px 1px 1px #003,-1px 0 1px #003;
+	}
+	div{
+
+    position: relative;
+    letter-spacing: .07em;
+    font-size: 1rem;
+    font-weight: normal;
+    margin: 0 auto;
+
+    font-weight: bold;
+    color: #000;
+    text-shadow: 0 0 1px currentColor, 2px 0 1px #083058, 0 2px 1px #98c0e8, 2px 1px 1px #083058, 1px 2px 1px #98c0e8, 2px 2px 1px #487098, 3px 1px 1px #083058, 1px 3px 1px #98c0e8, 3px 2px 1px #083058, 2px 3px 1px #98c0e8, 3px 3px 1px #487098, 4px 2px 1px #083058, 2px 4px 1px #98c0e8, 4px 3px 1px #083058, 3px 4px 1px #98c0e8, 4px 4px 1px #487098, 5px 3px 1px #083058, 3px 5px 1px #98c0e8, 5px 4px 1px #083058, 4px 5px 1px #98c0e8, 5px 5px 1px #487098, 6px 4px 1px #083058, 4px 6px 1px #98c0e8, 6px 5px 1px #083058, 5px 6px 1px #98c0e8, 6px 6px 1px #487098, 7px 5px 1px #083058, 5px 7px 1px #98c0e8, 7px 6px 1px #083058, 6px 7px 1px #98c0e8, 7px 7px 1px #487098, 8px 6px 1px #083058, 6px 8px 1px #98c0e8, 8px 7px 1px #083058, 7px 8px 1px #98c0e8, 8px 8px 1px #487098, 9px 7px 1px #083058, 7px 9px 1px #98c0e8, 9px 8px 1px #083058, 8px 9px 1px #98c0e8, 9px 9px 1px #487098, 10px 8px 1px #083058, 8px 10px 1px #98c0e8, 10px 9px 1px #083058, 9px 10px 1px #98c0e8, 10px 10px 1px #487098, 11px 9px 1px #083058, 9px 11px 1px #98c0e8, 11px 10px 1px #083058, 10px 11px 1px #98c0e8, 11px 11px 1px #487098, 11px 11px 1px #666, 11px 12px 1px #666, 10px 12px 1px #666, 9px 12px 1px #666, 8px 11px 1px #666, 7px 10px 1px #666, 6px 9px 1px #666, 5px 8px 1px #666, 4px 7px 1px #666, 3px 6px 1px #666, 2px 5px 1px #666, 1px 4px 1px #666, 0 3px 1px #666, -1px 2px 1px #666, 20px 8px 8px rgba(0,0,0,.7);
+
+	}
+ 
+</style>  
+</head>
+<body>  
+<div>Hello World</div>  
+</body>
+<script> 
+   	//document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+
+
+	var T={
+		    resizeTimer: null,
+		    // @param num 初始化html fontsize大小
+		    initfontsize: function() {
+		        function doResize() {
+		            T.resizeTimer = null;
+		            var fs = document.body.scrollWidth * 0.0625 + "px";
+		            document.getElementsByTagName("html")[0].style.fontSize = fs;
+		            document.body.style.fontSize = fs;
+		        }
+		        doResize();
+		        window.onresize = function() {
+		        	doResize();
+		            // if (T.resizeTimer) {
+		            //     clearTimeout(T.resizeTimer);
+		            // }
+		            // T.resizeTimer = setTimeout(doResize, 500);
+		        }
+		    }
+    }
+
+    T.initfontsize();
+</script>
+</html>
+ 
