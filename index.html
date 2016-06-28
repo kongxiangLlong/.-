@@ -1,3 +1,8 @@
+
+---
+layout: default
+title: 我的Blog
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,22 +28,22 @@
 		-ms-box-align:center;  
 	}
  
-	div:before, div:after {
+	div.hw:before, div.hw:after {
 	    content: 'Hello World';
 	    position: absolute;
 	    top: 0;
 	    left: 0;
 	    right: 0;
 	}
-	div:after {
+	div.hw:after {
     	color: rgba(40,80,120,.1);
     	text-shadow: 1px -1px 1px rgba(40,80,120,.8),-1px 1px 1px rgba(255,255,255,.8);
 	}
-	div:before {
+	div.hw:before {
 	    color: rgb(40,80,120);
 	    text-shadow: 0 0 1px currentColor,-1px -1px 1px #003,0 -1px 1px #003,1px -1px 1px #003,1px 0 1px #003,1px 1px 1px #003,0 1px 1px #003,-1px 1px 1px #003,-1px 0 1px #003;
 	}
-	div{
+	div.hw{
 
     position: relative;
     letter-spacing: .07em;
@@ -55,7 +60,16 @@
 </style>  
 </head>
 <body>  
-<div>Hello World</div>  
+<div class='hw'>Hello World</div>  
+<div>
+　<h2>{{ page.title }}</h2>
+　　<p>最新文章</p>
+　　<ul>
+　　　　{% for post in site.posts %}
+　　　　　　<li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
+　　　　{% endfor %}
+　　</ul>
+</div>
 </body>
 <script> 
    	//document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
