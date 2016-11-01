@@ -440,7 +440,17 @@
 
 		$scope.initStoreList=function(){
 			 $scope.objList=store.get('templist');
-			 if(!$scope.objList){ $scope.objList=[] };
+			 if(!$scope.objList){ 
+			 	$scope.objList=[] 
+
+			 	//e.g 
+				$scope.objList=[	
+					{ 
+						leftStr:"模板 1:{{key1}} 2:{{key2}} 2:{{key3}}",
+						title:"T"
+					}
+				];
+			 };
 			 console.log($scope.objList);	
 		}
 
